@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>LeetCode(1~2) | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode 1Description :Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you">
+  <meta name="description" content="LeetCode 1">
 <meta name="keywords" content="python,LeetCode,链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode(1~2)">
 <meta property="og:url" content="http://yoursite.com/2017/11/13/LeetCode-1-2/index.html">
 <meta property="og:site_name" content="Sodaoo">
-<meta property="og:description" content="LeetCode 1Description :Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you">
+<meta property="og:description" content="LeetCode 1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006wh4bKly1flgw9t89esj30q30csgm3.jpg">
-<meta property="og:updated_time" content="2017-11-13T16:05:55.398Z">
+<meta property="og:updated_time" content="2017-11-13T16:12:35.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode(1~2)">
-<meta name="twitter:description" content="LeetCode 1Description :Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you">
+<meta name="twitter:description" content="LeetCode 1">
 <meta name="twitter:image" content="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
@@ -177,7 +177,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="LeetCode-1"><a href="#LeetCode-1" class="headerlink" title="LeetCode 1"></a>LeetCode 1</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description :"></a>Description :</h4><pre><code>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+        <h3 id="LeetCode-1"><a href="#LeetCode-1" class="headerlink" title="LeetCode 1"></a>LeetCode 1</h3><a id="more"></a>
+<h4 id="Description"><a href="#Description" class="headerlink" title="Description :"></a>Description :</h4><pre><code>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 Example:
 Given nums = [2, 7, 11, 15], target = 9,
@@ -185,16 +186,13 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 </code></pre><p>  意思比较明确, 找出数组里面相加等于 target 的两个数 . 以 [ i , j ] 的形式返回他们的下标 .<br><br></p>
-<p>#####时间复杂度为 O(n) 的算法 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def twoSum(self, nums, target):</span><br><span class="line">        if len(nums) &lt;= 1:</span><br><span class="line">            return False</span><br><span class="line">        buff_dict = &#123;&#125;</span><br><span class="line">        for i in range(len(nums)):</span><br><span class="line">            print(buff_dict)</span><br><span class="line">            if nums[i] in buff_dict:</span><br><span class="line">                return [buff_dict[nums[i]], i]</span><br><span class="line">            else:</span><br><span class="line">                buff_dict[target - nums[i]] = i</span><br><span class="line"></span><br><span class="line">a = Solution()           </span><br><span class="line">print(a.twoSum([2,4,6,8,10],12))</span><br><span class="line">print(a.twoSum([1,3,7,13],4))</span><br><span class="line">print(a.twoSum([1,3,7,13],20))</span><br></pre></td></tr></table></figure>
+<h5 id="时间复杂度为-O-n-的算法"><a href="#时间复杂度为-O-n-的算法" class="headerlink" title="时间复杂度为 O(n) 的算法 :"></a>时间复杂度为 O(n) 的算法 :</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def twoSum(self, nums, target):</span><br><span class="line">        if len(nums) &lt;= 1:</span><br><span class="line">            return False</span><br><span class="line">        buff_dict = &#123;&#125;</span><br><span class="line">        for i in range(len(nums)):</span><br><span class="line">            print(buff_dict)</span><br><span class="line">            if nums[i] in buff_dict:</span><br><span class="line">                return [buff_dict[nums[i]], i]</span><br><span class="line">            else:</span><br><span class="line">                buff_dict[target - nums[i]] = i</span><br><span class="line"></span><br><span class="line">a = Solution()           </span><br><span class="line">print(a.twoSum([2,4,6,8,10],12))</span><br><span class="line">print(a.twoSum([1,3,7,13],4))</span><br><span class="line">print(a.twoSum([1,3,7,13],20))</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<p>###知识点:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums[i] in buff_dict:</span><br></pre></td></tr></table></figure></p>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点:"></a>知识点:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums[i] in buff_dict:</span><br></pre></td></tr></table></figure>
 <p>  对于字典来说 ,a in {dict} 的条件是:<br>a 必须是 dict 里面的一个 key 值, 而不是一个 value 值, 如下例</p>
 <p><img src="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg" alt="图示"></p>
 <p><br></p>
-<h3 id="解析要点"><a href="#解析要点" class="headerlink" title="解析要点 :"></a>解析要点 :</h3><h5 id="1-返回的是下标-index"><a href="#1-返回的是下标-index" class="headerlink" title="1.  返回的是下标(index)"></a>1.  返回的是下标(index)</h5><h5 id="2-target-nums-i-nums-j"><a href="#2-target-nums-i-nums-j" class="headerlink" title="2.  target = nums[i] + nums[j],"></a>2.  target = nums[i] + nums[j],</h5><h5 id="gt-num-i-target-nums-j"><a href="#gt-num-i-target-nums-j" class="headerlink" title="-&gt; num[i] = target - nums[j]"></a>-&gt; num[i] = target - nums[j]</h5><h5 id="一上来-target-为空-令-x-target-num-0-x-存入dict-作为key值-此时dict-的状态是"><a href="#一上来-target-为空-令-x-target-num-0-x-存入dict-作为key值-此时dict-的状态是" class="headerlink" title="一上来 target 为空 ,令 x = target-num[0] , x 存入dict 作为key值.此时dict 的状态是:"></a>一上来 target 为空 ,令 x = target-num[0] , x 存入dict 作为key值.此时dict 的状态是:</h5><pre><code>dict[ 扫描到的第一个元素的值 : 该元素的下标 i ]   
-</code></pre><p><br><br>如果后面i遍历到 “nums[i]正好等于 dict的key值(“if nums[i] in buff_dict”)<br>那说明找到了一个num[i] = target - nums[j] ,直接返回 dict[nums[i],i] ….<b>只扫描一遍,就得到了这样两个下标</b> .</p>
-<p><br><br><br><br><br></p>
+<h3 id="解析要点"><a href="#解析要点" class="headerlink" title="解析要点 :"></a>解析要点 :</h3><h5 id="1-返回的是下标-index"><a href="#1-返回的是下标-index" class="headerlink" title="1.  返回的是下标(index)"></a>1.  返回的是下标(index)</h5><h5 id="2-target-nums-i-nums-j"><a href="#2-target-nums-i-nums-j" class="headerlink" title="2.  target = nums[i] + nums[j],"></a>2.  target = nums[i] + nums[j],</h5><h5 id="gt-num-i-target-nums-j"><a href="#gt-num-i-target-nums-j" class="headerlink" title="-&gt; num[i] = target - nums[j]"></a>-&gt; num[i] = target - nums[j]</h5><h5 id="一上来-target-为空-令-x-target-num-0-x-存入dict-作为key值-此时dict-的状态是"><a href="#一上来-target-为空-令-x-target-num-0-x-存入dict-作为key值-此时dict-的状态是" class="headerlink" title="一上来 target 为空 ,令 x = target-num[0] , x 存入dict 作为key值.此时dict 的状态是:"></a>一上来 target 为空 ,令 x = target-num[0] , x 存入dict 作为key值.此时dict 的状态是:</h5><p><b>dict[ 扫描到的第一个元素的值 : 该元素的下标 i ]   </b><br><br><br>如果后面i遍历到 “nums[i]正好等于 dict的key值(“if nums[i] in buff_dict”)<br>那说明找到了一个num[i] = target - nums[j] ,直接返回 dict[nums[i],i] ….<b>只扫描一遍,就得到了这样两个下标</b> .<br><br><br><br></p>
 <h3 id="LeetCode-2"><a href="#LeetCode-2" class="headerlink" title="LeetCode 2"></a>LeetCode 2</h3><h4 id="Description-1"><a href="#Description-1" class="headerlink" title="Description :"></a>Description :</h4><pre><code>    You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
     You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
@@ -471,6 +469,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -480,10 +482,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
