@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017 | Sodaoo</title>
+  <title>LeetCode(1~2) | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sodaoo">
-<meta property="og:url" content="http://yoursite.com/archives/2017/index.html">
+  <meta name="description" content="LeetCode 1Description :Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you">
+<meta name="keywords" content="python,LeetCode,链表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode(1~2)">
+<meta property="og:url" content="http://yoursite.com/2017/11/13/LeetCode-1-2/index.html">
 <meta property="og:site_name" content="Sodaoo">
+<meta property="og:description" content="LeetCode 1Description :Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg">
+<meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006wh4bKly1flgw9t89esj30q30csgm3.jpg">
+<meta property="og:updated_time" content="2017-11-13T16:05:55.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sodaoo">
+<meta name="twitter:title" content="LeetCode(1~2)">
+<meta name="twitter:description" content="LeetCode 1Description :Given an array of integers, return indices of the two numbers such that they add up to a specific target. You may assume that each input would have exactly one solution, and you">
+<meta name="twitter:image" content="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
   
@@ -149,36 +157,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-LeetCode-1-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/13/LeetCode-1-2/" class="archive-article-date">
-  	<time datetime="2017-11-13T15:36:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/13/LeetCode-1-2/">LeetCode(1~2)</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode(1~2)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/11/13/LeetCode-1-2/" class="archive-article-date">
+  	<time datetime="2017-11-13T15:36:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="LeetCode-1"><a href="#LeetCode-1" class="headerlink" title="LeetCode 1"></a>LeetCode 1</h3><h4 id="Description"><a href="#Description" class="headerlink" title="Description :"></a>Description :</h4><pre><code>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+Example:
+Given nums = [2, 7, 11, 15], target = 9,
+
+Because nums[0] + nums[1] = 2 + 7 = 9,
+return [0, 1].
+</code></pre><p>  意思比较明确, 找出数组里面相加等于 target 的两个数 . 以 [ i , j ] 的形式返回他们的下标 .<br><br></p>
+<p>#####时间复杂度为 O(n) 的算法 :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def twoSum(self, nums, target):</span><br><span class="line">        if len(nums) &lt;= 1:</span><br><span class="line">            return False</span><br><span class="line">        buff_dict = &#123;&#125;</span><br><span class="line">        for i in range(len(nums)):</span><br><span class="line">            print(buff_dict)</span><br><span class="line">            if nums[i] in buff_dict:</span><br><span class="line">                return [buff_dict[nums[i]], i]</span><br><span class="line">            else:</span><br><span class="line">                buff_dict[target - nums[i]] = i</span><br><span class="line"></span><br><span class="line">a = Solution()           </span><br><span class="line">print(a.twoSum([2,4,6,8,10],12))</span><br><span class="line">print(a.twoSum([1,3,7,13],4))</span><br><span class="line">print(a.twoSum([1,3,7,13],20))</span><br></pre></td></tr></table></figure>
+<p><br></p>
+<p>###知识点:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums[i] in buff_dict:</span><br></pre></td></tr></table></figure></p>
+<p>  对于字典来说 ,a in {dict} 的条件是:<br>a 必须是 dict 里面的一个 key 值, 而不是一个 value 值, 如下例</p>
+<p><img src="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg" alt="图示"></p>
+<p><br></p>
+<h3 id="解析要点"><a href="#解析要点" class="headerlink" title="解析要点 :"></a>解析要点 :</h3><h5 id="1-返回的是下标-index"><a href="#1-返回的是下标-index" class="headerlink" title="1.  返回的是下标(index)"></a>1.  返回的是下标(index)</h5><h5 id="2-target-nums-i-nums-j"><a href="#2-target-nums-i-nums-j" class="headerlink" title="2.  target = nums[i] + nums[j],"></a>2.  target = nums[i] + nums[j],</h5><h5 id="gt-num-i-target-nums-j"><a href="#gt-num-i-target-nums-j" class="headerlink" title="-&gt; num[i] = target - nums[j]"></a>-&gt; num[i] = target - nums[j]</h5><h5 id="一上来-target-为空-令-x-target-num-0-x-存入dict-作为key值-此时dict-的状态是"><a href="#一上来-target-为空-令-x-target-num-0-x-存入dict-作为key值-此时dict-的状态是" class="headerlink" title="一上来 target 为空 ,令 x = target-num[0] , x 存入dict 作为key值.此时dict 的状态是:"></a>一上来 target 为空 ,令 x = target-num[0] , x 存入dict 作为key值.此时dict 的状态是:</h5><pre><code>dict[ 扫描到的第一个元素的值 : 该元素的下标 i ]   
+</code></pre><p><br><br>如果后面i遍历到 “nums[i]正好等于 dict的key值(“if nums[i] in buff_dict”)<br>那说明找到了一个num[i] = target - nums[j] ,直接返回 dict[nums[i],i] ….<b>只扫描一遍,就得到了这样两个下标</b> .</p>
+<p><br><br><br><br><br></p>
+<h3 id="LeetCode-2"><a href="#LeetCode-2" class="headerlink" title="LeetCode 2"></a>LeetCode 2</h3><h4 id="Description-1"><a href="#Description-1" class="headerlink" title="Description :"></a>Description :</h4><pre><code>    You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.
+    You may assume the two numbers do not contain any leading zero, except the number 0 itself.
+Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)
+Output: 7 -&gt; 0 -&gt; 8
+
+    两个链表相加, 进位   . 然后按照逆序存储 ,  ( 342 + 465 = 807 )
+</code></pre><p><img src="https://wx4.sinaimg.cn/mw690/006wh4bKly1flgw9t89esj30q30csgm3.jpg" alt="Description"><br>*carry : 进位<br><br><br><br><br><b>知识点 :<br>  <b>1. divmod() 函数<br>divmod(a, b)  函数功能 : 返回两个数 : [除数] [余数]<br>divmod(7, 2) -&gt; (3, 1)<br>divmod(8, 2) -&gt; (4, 0)<br>divmod(1+2j,1+0.5j) -&gt; ((1+0j), 1.5j)<br><b>2. python 对链表的操作</b><br><br><br><br></b></b></p>
+<p>###<b>思路 </b>:<br>   两个链表的第一个元素相加( 相当于个位相加, 个位 = 余数  ,存储进位 carry = 除数 , 如 4+9 ,余数3 除数1 ) ,<br>再处理两个链表的第二个元素 和 进位 相加 (  相当于对十位的操作,  carry = 除数  )<br><br><br><br><br>&lt; 关键代码 : &gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">carry , val = divmod(v1+v2+carry,10)</span><br><span class="line">n.next = ListNode(val)    # 对目的链表的第一个节点初始化</span><br><span class="line">n = n.next                # 指针后移</span><br></pre></td></tr></table></figure></p>
+<p>..最后返回一个 n.next 就是第一个节点    (n 只是起到了一个头指针的作用) <br></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&apos;&apos;&apos;</span><br><span class="line">class ListNode(object):</span><br><span class="line">    def __init__(self, x):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = None</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">class Solution(object):</span><br><span class="line">    def addTwoNumbers(self, l1, l2):</span><br><span class="line">        n = m = ListNode(0)</span><br><span class="line">        carry = 0</span><br><span class="line">        while l1 or l2 or carry:</span><br><span class="line">            v1 = v2 = 0</span><br><span class="line">            if l1:</span><br><span class="line">                v1 = l1.val</span><br><span class="line">                l1 = l1.next</span><br><span class="line">            if l2:</span><br><span class="line">                v2 = l2.val</span><br><span class="line">                l2 = l2.next</span><br><span class="line">            carry , val = divmod(v1+v2+carry,10)</span><br><span class="line">            n.next = ListNode(val)</span><br><span class="line">            n = n.next</span><br><span class="line">        print(m.next.val)</span><br><span class="line">        return m.next</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span id="busuanzi_container_page_pv">
+   本文阅读量:<span id="busuanzi_value_page_pv"></span>
+   </span>
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>赏你~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/Alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,137 +260,126 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/13/LeetCode-1-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/12/What-do-you-want/" class="archive-article-date">
-  	<time datetime="2017-11-12T11:27:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/12/What-do-you-want/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">What do you want?</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/12/What-do-you-want/">What do you want?</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="LeetCode-1-2" data-title="LeetCode(1~2)" data-url="http://yoursite.com/2017/11/13/LeetCode-1-2/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/" class="archive-article-date">
-  	<time datetime="2017-11-12T11:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/">来碗小冰! 实现聊天机器人(python3)</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/10/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-10T11:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/10/hello-world/">Test Article</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -354,8 +405,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
