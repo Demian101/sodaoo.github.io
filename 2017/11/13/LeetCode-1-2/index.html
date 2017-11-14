@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>LeetCode(1~2) | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode 1">
+  <meta name="description" content="# LeetCode 1">
 <meta name="keywords" content="python,LeetCode,链表">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode(1~2)">
 <meta property="og:url" content="http://yoursite.com/2017/11/13/LeetCode-1-2/index.html">
 <meta property="og:site_name" content="Sodaoo">
-<meta property="og:description" content="LeetCode 1">
+<meta property="og:description" content="# LeetCode 1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg">
 <meta property="og:image" content="https://wx4.sinaimg.cn/mw690/006wh4bKly1flgw9t89esj30q30csgm3.jpg">
-<meta property="og:updated_time" content="2017-11-13T16:12:35.359Z">
+<meta property="og:updated_time" content="2017-11-14T05:11:35.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode(1~2)">
-<meta name="twitter:description" content="LeetCode 1">
+<meta name="twitter:description" content="# LeetCode 1">
 <meta name="twitter:image" content="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
@@ -177,7 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="LeetCode-1"><a href="#LeetCode-1" class="headerlink" title="LeetCode 1"></a>LeetCode 1</h3><a id="more"></a>
+        <h1 id="LeetCode-1"><a href="#LeetCode-1" class="headerlink" title="# LeetCode 1"></a># LeetCode 1</h1><a id="more"></a>
 <h4 id="Description"><a href="#Description" class="headerlink" title="Description :"></a>Description :</h4><pre><code>Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 Example:
@@ -186,9 +186,9 @@ Given nums = [2, 7, 11, 15], target = 9,
 Because nums[0] + nums[1] = 2 + 7 = 9,
 return [0, 1].
 </code></pre><p>  意思比较明确, 找出数组里面相加等于 target 的两个数 . 以 [ i , j ] 的形式返回他们的下标 .<br><br></p>
-<h5 id="时间复杂度为-O-n-的算法"><a href="#时间复杂度为-O-n-的算法" class="headerlink" title="时间复杂度为 O(n) 的算法 :"></a>时间复杂度为 O(n) 的算法 :</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    def twoSum(self, nums, target):</span><br><span class="line">        if len(nums) &lt;= 1:</span><br><span class="line">            return False</span><br><span class="line">        buff_dict = &#123;&#125;</span><br><span class="line">        for i in range(len(nums)):</span><br><span class="line">            print(buff_dict)</span><br><span class="line">            if nums[i] in buff_dict:</span><br><span class="line">                return [buff_dict[nums[i]], i]</span><br><span class="line">            else:</span><br><span class="line">                buff_dict[target - nums[i]] = i</span><br><span class="line"></span><br><span class="line">a = Solution()           </span><br><span class="line">print(a.twoSum([2,4,6,8,10],12))</span><br><span class="line">print(a.twoSum([1,3,7,13],4))</span><br><span class="line">print(a.twoSum([1,3,7,13],20))</span><br></pre></td></tr></table></figure>
+<h5 id="时间复杂度为-O-n-的算法"><a href="#时间复杂度为-O-n-的算法" class="headerlink" title="时间复杂度为 O(n) 的算法 :"></a>时间复杂度为 O(n) 的算法 :</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">twoSum</span><span class="params">(self, nums, target)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> len(nums) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">        buff_dict = &#123;&#125;</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums)):</span><br><span class="line">            print(buff_dict)</span><br><span class="line">            <span class="keyword">if</span> nums[i] <span class="keyword">in</span> buff_dict:</span><br><span class="line">                <span class="keyword">return</span> [buff_dict[nums[i]], i]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                buff_dict[target - nums[i]] = i</span><br><span class="line"></span><br><span class="line">a = Solution()           </span><br><span class="line">print(a.twoSum([<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>],<span class="number">12</span>))</span><br><span class="line">print(a.twoSum([<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">13</span>],<span class="number">4</span>))</span><br><span class="line">print(a.twoSum([<span class="number">1</span>,<span class="number">3</span>,<span class="number">7</span>,<span class="number">13</span>],<span class="number">20</span>))</span><br></pre></td></tr></table></figure>
 <p><br></p>
-<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点:"></a>知识点:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums[i] in buff_dict:</span><br></pre></td></tr></table></figure>
+<h3 id="知识点"><a href="#知识点" class="headerlink" title="知识点:"></a>知识点:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nums[i] <span class="keyword">in</span> buff_dict:</span><br></pre></td></tr></table></figure>
 <p>  对于字典来说 ,a in {dict} 的条件是:<br>a 必须是 dict 里面的一个 key 值, 而不是一个 value 值, 如下例</p>
 <p><img src="https://wx3.sinaimg.cn/mw690/006wh4bKly1flgw1t7830j308503pdfm.jpg" alt="图示"></p>
 <p><br></p>
@@ -200,9 +200,10 @@ Output: 7 -&gt; 0 -&gt; 8
 
     两个链表相加, 进位   . 然后按照逆序存储 ,  ( 342 + 465 = 807 )
 </code></pre><p><img src="https://wx4.sinaimg.cn/mw690/006wh4bKly1flgw9t89esj30q30csgm3.jpg" alt="Description"><br>*carry : 进位<br><br><br><br><br><b>知识点 :<br>  <b>1. divmod() 函数<br>divmod(a, b)  函数功能 : 返回两个数 : [除数] [余数]<br>divmod(7, 2) -&gt; (3, 1)<br>divmod(8, 2) -&gt; (4, 0)<br>divmod(1+2j,1+0.5j) -&gt; ((1+0j), 1.5j)<br><b>2. python 对链表的操作</b><br><br><br><br></b></b></p>
-<p>###<b>思路 </b>:<br>   两个链表的第一个元素相加( 相当于个位相加, 个位 = 余数  ,存储进位 carry = 除数 , 如 4+9 ,余数3 除数1 ) ,<br>再处理两个链表的第二个元素 和 进位 相加 (  相当于对十位的操作,  carry = 除数  )<br><br><br><br><br>&lt; 关键代码 : &gt;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">carry , val = divmod(v1+v2+carry,10)</span><br><span class="line">n.next = ListNode(val)    # 对目的链表的第一个节点初始化</span><br><span class="line">n = n.next                # 指针后移</span><br></pre></td></tr></table></figure></p>
-<p>..最后返回一个 n.next 就是第一个节点    (n 只是起到了一个头指针的作用) <br></p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&apos;&apos;&apos;</span><br><span class="line">class ListNode(object):</span><br><span class="line">    def __init__(self, x):</span><br><span class="line">        self.val = x</span><br><span class="line">        self.next = None</span><br><span class="line">&apos;&apos;&apos;</span><br><span class="line">class Solution(object):</span><br><span class="line">    def addTwoNumbers(self, l1, l2):</span><br><span class="line">        n = m = ListNode(0)</span><br><span class="line">        carry = 0</span><br><span class="line">        while l1 or l2 or carry:</span><br><span class="line">            v1 = v2 = 0</span><br><span class="line">            if l1:</span><br><span class="line">                v1 = l1.val</span><br><span class="line">                l1 = l1.next</span><br><span class="line">            if l2:</span><br><span class="line">                v2 = l2.val</span><br><span class="line">                l2 = l2.next</span><br><span class="line">            carry , val = divmod(v1+v2+carry,10)</span><br><span class="line">            n.next = ListNode(val)</span><br><span class="line">            n = n.next</span><br><span class="line">        print(m.next.val)</span><br><span class="line">        return m.next</span><br></pre></td></tr></table></figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路 :"></a><b>思路 </b>:</h3><p>   两个链表的第一个元素相加( 相当于个位相加, 个位 = 余数  ,存储进位 carry = 除数 , 如 4+9 ,余数3 除数1 ) ,<br>再处理两个链表的第二个元素 和 进位 相加 (  相当于对十位的操作,  carry = 除数  )<br><br><br><br><br>&lt; 关键代码 : &gt;<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">carry , val = divmod(v1+v2+carry,<span class="number">10</span>)</span><br><span class="line">n.next = ListNode(val)    <span class="comment"># 对目的链表的第一个节点初始化</span></span><br><span class="line">n = n.next                <span class="comment"># 指针后移</span></span><br></pre></td></tr></table></figure></p>
+<p>..最后返回一个 n.next 就是第一个节点 (n只是起到了一个头指针的作用) <br></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码:"></a>代码:</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">class ListNode(object):</span></span><br><span class="line"><span class="string">    def __init__(self, x):</span></span><br><span class="line"><span class="string">        self.val = x</span></span><br><span class="line"><span class="string">        self.next = None</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">addTwoNumbers</span><span class="params">(self, l1, l2)</span>:</span></span><br><span class="line">        n = m = ListNode(<span class="number">0</span>)</span><br><span class="line">        carry = <span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> l1 <span class="keyword">or</span> l2 <span class="keyword">or</span> carry:</span><br><span class="line">            v1 = v2 = <span class="number">0</span></span><br><span class="line">            <span class="keyword">if</span> l1:</span><br><span class="line">                v1 = l1.val</span><br><span class="line">                l1 = l1.next</span><br><span class="line">            <span class="keyword">if</span> l2:</span><br><span class="line">                v2 = l2.val</span><br><span class="line">                l2 = l2.next</span><br><span class="line">            carry , val = divmod(v1+v2+carry,<span class="number">10</span>)</span><br><span class="line">            n.next = ListNode(val)</span><br><span class="line">            n = n.next</span><br><span class="line">        print(m.next.val)</span><br><span class="line">        <span class="keyword">return</span> m.next</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -321,15 +322,6 @@ Output: 7 -&gt; 0 -&gt; 8
 
   
 <nav id="article-nav">
-  
-    <a href="/2017/11/14/text/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          text
-        
-      </div>
-    </a>
   
   
     <a href="/2017/11/12/What-do-you-want/" id="article-nav-older" class="article-nav-link-wrap">
@@ -478,10 +470,6 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
@@ -491,6 +479,10 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
