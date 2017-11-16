@@ -151,6 +151,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-LeetCode-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/11/16/LeetCode-4/">LeetCode(4)</a>
+    </h1>
+  
+
+        
+        <a href="/2017/11/16/LeetCode-4/" class="archive-article-date">
+  	<time datetime="2017-11-16T12:59:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>There are two sorted arrays nums1 and nums2 of size m and n respectively.<br>Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
+<p>Example 1:<br>nums1 = [1, 3]  nums2 = [2]<br>The median is 2.0</p>
+<p>Example 2:<br>nums1 = [1, 2]  nums2 = [3, 4]<br>The median is (2 + 3)/2 = 2.5</p>
+</blockquote>
+<p><b>思路: </b><br>直接思路: 合并两个数列 -&gt;排序-&gt;找中位数 .时间复杂度: O((m+n)log(m+n)). 但要求 : O(log(m+n)) ; 考察点 :二分查找 .</p>
+<p>先看 : 如何找到两个数列的”第 k 小的数” , 即程序中 getKth ( A , B , k )函数的实现 .例如 : A = [ 1，3，5，7 ] ; B = [ 2，4，6，8，9，10 ] ; 要求取第 7 个小的数 , len(A) = 4 , len(B) = 6 ; k/2 = 7/2 = 3 , 那我们来看 A和B 数组第 3 小的数: 有A[2]=5 ; B[2]=6 ; 而 A[2] &lt; B[2] ; 则A[2] 以及比他小的数 A[1]  A[2] 中  必然不可能有第7个小的数 .证明如下图 :<br><img src="https://wx4.sinaimg.cn/mw690/006wh4bKly1flk8sugmosj31kw0nr4qp.jpg" alt="比较"><br>图可以清晰看出: A[ 0 : 2 ] 这三个数绝不可能是第 7 个小的数.<br>A[2] 最多是个第五小 .至此 .我们把这个三个数”删掉” ,问题就转化为了求 : getkth( A,B,k-3 ) 即 getkth( A,B,4 )</p>
+<p>那取中位数的问题也是一样 :</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span>  </span><br><span class="line"><span class="keyword">public</span>:  </span><br><span class="line">    <span class="function"><span class="keyword">double</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> num1[],<span class="keyword">int</span> len1, <span class="keyword">int</span> num2[],<span class="keyword">int</span> len2)</span> </span>&#123;  </span><br><span class="line">        <span class="comment">//总长度的一半  </span></span><br><span class="line">        <span class="keyword">int</span> left = (len1 + len2 + <span class="number">1</span>) / <span class="number">2</span>;   <span class="comment">// 5</span></span><br><span class="line">        <span class="keyword">int</span> right = (len1 + len2 + <span class="number">2</span>  ) / <span class="number">2</span>;    <span class="comment">//6</span></span><br><span class="line">        <span class="comment">//对两个数组分治, 如果最后得到 2 个值 ,那就取平均.</span></span><br><span class="line">        <span class="keyword">return</span> (getkth(num1, len1 ,num2, len2, left) + </span><br><span class="line">        	getkth(num1, len1, num2, len2, right)) / <span class="number">2.0</span>;  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getkth</span><span class="params">(<span class="keyword">int</span> n1[],<span class="keyword">int</span> len1, <span class="keyword">int</span> n2[],<span class="keyword">int</span> len2, <span class="keyword">int</span> k)</span></span>&#123;  </span><br><span class="line">	   <span class="comment">// 位置交换是是为了确保 len1 &lt; len2 方便操作</span></span><br><span class="line">        <span class="keyword">if</span> (len1 &gt; len2)    </span><br><span class="line">            <span class="keyword">return</span> getkth(n2, len2, n1, len1, k); <span class="comment">//重排 </span></span><br><span class="line">        <span class="keyword">if</span> (len1 == <span class="number">0</span>)  <span class="comment">//</span></span><br><span class="line">            <span class="keyword">return</span> n2[k - <span class="number">1</span>];  </span><br><span class="line">        <span class="keyword">if</span> (k == <span class="number">1</span>)  </span><br><span class="line">            <span class="keyword">return</span> min(n1[<span class="number">0</span>], n2[<span class="number">0</span>]);  </span><br><span class="line">       </span><br><span class="line">        <span class="comment">//递归过程  </span></span><br><span class="line">        <span class="keyword">int</span> i = min(len1, k/<span class="number">2</span> ), j = min(len2, k/<span class="number">2</span> );  </span><br><span class="line">        <span class="keyword">if</span> (n1[i - <span class="number">1</span>] &gt; n2[j - <span class="number">1</span>])  </span><br><span class="line">            <span class="keyword">return</span> getkth(n1,  len1,  n2+j, len2-j, k-j);  </span><br><span class="line">        <span class="keyword">else</span>  </span><br><span class="line">            <span class="keyword">return</span> getkth(n1+i, len1-i, n2, len2, k-i);  </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">    &#125;        </span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	Solution aa;</span><br><span class="line">	<span class="keyword">int</span> a[] = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">11</span>,<span class="number">12</span>&#125; ; <span class="keyword">int</span> m = <span class="number">7</span>;</span><br><span class="line">	<span class="keyword">int</span> b[] = &#123;<span class="number">2</span>,<span class="number">4</span>,<span class="number">6</span>,<span class="number">8</span>,<span class="number">10</span>&#125; ;  <span class="keyword">int</span> n= <span class="number">5</span>;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;aa.find(a,m,b,n);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><b>讲解 : </b><br>以测试用例为例 :<br>     a[] = {1,2,3,4,5} ;  b[] = {2,4,6,8,10};</p>
+<blockquote>
+<p>int left = (len1 + len2 + 1) / 2;         // =5<br>int right = (len1 + len2 + 2  ) / 2;       // =6<br>如果有 10 个数, 那么就是取 第五小和第六小的数的平均值 . left == 5 ; right == 6 ,<br>如果有 9 个数, 那么就是取 第五小的数 . left == 5 ; right == 5 ,</p>
+</blockquote>
+
+      
+
+      
+
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/11/16/LeetCode-4/">Show it >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-LeetCode-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
