@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>最长回文子序列 | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="p {  margin: 8px;  font-size: 18px; font-family: H; }你的阿斯达所多撒旦啊多撒多s阿萨德啊阿萨德爱迪生">
+  <meta name="description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta name="keywords" content="动态规划">
 <meta property="og:type" content="article">
 <meta property="og:title" content="最长回文子序列">
 <meta property="og:url" content="http://yoursite.com/2017/11/17/最长回文子序列/index.html">
 <meta property="og:site_name" content="Sodaoo">
-<meta property="og:description" content="p {  margin: 8px;  font-size: 18px; font-family: H; }你的阿斯达所多撒旦啊多撒多s阿萨德啊阿萨德爱迪生">
+<meta property="og:description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-17T13:45:27.795Z">
+<meta property="og:updated_time" content="2017-11-18T05:44:35.889Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="最长回文子序列">
-<meta name="twitter:description" content="p {  margin: 8px;  font-size: 18px; font-family: H; }你的阿斯达所多撒旦啊多撒多s阿萨德啊阿萨德爱迪生">
+<meta name="twitter:description" content="p {  margin: 8px;  font-size: 20px;  }">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
   
@@ -174,7 +174,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><style>p {  margin: 8px;  font-size: 18px; font-family: H; }</style><br>你的<br>阿斯达所多撒旦啊多撒多s阿萨德啊<br>阿萨德爱迪生</p>
+        <style>p {  margin: 8px;  font-size: 20px;  }</style>
+
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1296882&auto=0&height=66"></iframe><br><a id="more"></a></p>
+<p><b>Description :</b></p>
+<blockquote>
+<p>寻找字符串的最长回文子序列的长度 .<br>和子串不同,子串要求是连续的, 但是回文序列可以不连续<br>比如 “axbnOba” 的最长回文子序列就是 “abOba” ,长度为 5 . </p>
+</blockquote>
+<hr>
+<p>子问题 : 单字符一定是回文序列 .<br>对任意字符串，如果头和尾相同，那么它的最长回文子序列一定是:<br>“去头尾后的部分的最长回文子序列 + 头和尾 “。<br>如果头和尾不同，那么它的最长回文子序列是:<br>“去头的部分的最长回文子序列 和 去尾的部分的最长回文子序列” 中<b>较长的</b>那一个。</p>
+<p>设字符串为s，设 dp(i,j) 表示 s[i..j]的最长回文子序列的长度。比如 dp[0,1] 就表示 s[0..1] 的最长回文序列的长度 . 而 dp(m,m) 表示 s[m] 这个字符的最长回文序列长度 ,为 1 . <br><br><b>## 写出状态转移方程 : </b></p>
+<blockquote>
+<p>初始化 : 当i&gt;j时，dp(i,j) = 0 , 当 i=j 时，dp(i,j)=1 (单字符回文序列的长度为1)<br>当 i&lt;j 并且 s[i]=s[j] 时，dp(i,j) = dp(i+1,j-1)+2<br>当 i&lt;j 并且 s[i]≠s[j] 时，dp(i,j) = max( dp(i,j-1), dp(i+1,j) )。<br>注意如果 i+1 =j 并且 s[i]=s[j]时，dp(i,j)=dp(i+1,j-1)+2 = dp(j,j-1)+2=2 </p>
+</blockquote>
+<p>代码<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">getsublength</span><span class="params">(<span class="built_in">string</span> s)</span></span></span><br><span class="line"><span class="function">    <span class="keyword">int</span> n </span>= s.length(); </span><br><span class="line">    <span class="keyword">int</span> f[n][n] ; </span><br><span class="line">    <span class="built_in">memset</span>(f,<span class="number">0</span>,<span class="keyword">sizeof</span>(f));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n<span class="number">-1</span>; i&gt;=<span class="number">0</span>; i--) &#123;</span><br><span class="line">        f[i][i]=<span class="number">1</span>;  <span class="comment">//执行过程中完成初始化 </span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i+<span class="number">1</span>; j &lt; s.length(); j++)&#123; </span><br><span class="line">            <span class="keyword">if</span> (s[i]==s[j])&#123; </span><br><span class="line">                f[i][j]=f[i+<span class="number">1</span>][j<span class="number">-1</span>]+<span class="number">2</span>;&#125; </span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                f[i][j]=max(f[i][j<span class="number">-1</span>],f[i+<span class="number">1</span>][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">cout</span>&lt;&lt;f[<span class="number">0</span>][s.length()<span class="number">-1</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -414,11 +427,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
