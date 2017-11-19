@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sodaoo</title>
+  <title>LeetCode(8) String to Integer | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sodaoo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="p {  margin: 8px;  font-size: 20px;  }">
+<meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode(8) String to Integer">
+<meta property="og:url" content="http://yoursite.com/2017/11/19/LeetCode-8/index.html">
 <meta property="og:site_name" content="Sodaoo">
+<meta property="og:description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/artilce8-1.png">
+<meta property="og:updated_time" content="2017-11-19T05:43:49.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sodaoo">
+<meta name="twitter:title" content="LeetCode(8) String to Integer">
+<meta name="twitter:description" content="p {  margin: 8px;  font-size: 20px;  }">
+<meta name="twitter:image" content="http://yoursite.com/images/artilce8-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
   
@@ -155,16 +162,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-LeetCode-8" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-LeetCode-8" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/19/LeetCode-8/">LeetCode(8) String to Integer</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode(8) String to Integer
     </h1>
   
 
@@ -179,12 +184,60 @@
       
         <style>p {  margin: 8px;  font-size: 20px;  }</style>
 
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1925208&auto=0&height=66"></iframe><br>
-        
-          <a class="article-more-a" href="/2017/11/19/LeetCode-8/#more">more >></a>
-        
+<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1925208&auto=0&height=66"></iframe><br><a id="more"></a></p>
+<p><b>Description : </b></p>
+<blockquote>
+<p>convert a string to an integer.<br>But : Carefully consider all possible input cases !!</p>
+<hr>
+<p>##1. The function first discards as many <u>whitespace</u> characters as necessary until the first non-whitespace character is found. Then, starting from this character, takes an optional initial <u>plus or minus sign</u> followed by as many numerical digits as possible, and interprets them as a numerical value.</p>
+<hr>
+<p>##2. The string can contain additional characters after those that form the integral number, which are ignored and have no effect on the behavior of this function.</p>
+<hr>
+<p>##3. If the first sequence of non-whitespace characters in str is not a valid integral number, or if no such sequence exists because either str is empty or it contains only whitespace characters, no conversion is performed.</p>
+<hr>
+<p>##4. If no valid conversion could be performed, a zero value is returned. If the correct value is out of the range of representable values, INT_MAX (2147483647) or INT_MIN (-2147483648) is returned.</p>
+<hr>
+<p><b>翻译 :</b><br>##1. 该函数首先丢弃尽可能多的空白字符，直到找到第一个非空白字符。然后，从这个字符开始，采用一个可选的初始正号或负号，后面跟随尽可能多的数字，并将它们解释为一个数字值。</p>
+<p>##2. 字符串可能在形成整数的数字后面还附加一些垃圾字符,这些字符被忽略，对这个函数的行为没有影响。</p>
+<p>##3. 如果str中的第一个非空白字符序列不是有效整数，或者由于str为空或只包含空格字符而不存在这样的序列，则不执行转换。如果不能执行有效的转换，则返回零值。</p>
+<p>##4. 如果值正确但超出了可表示值的范围，则返回INT_MAX（2147483647）或INT_MIN（-2147483648）。</p>
+<p><b>总结一下 : </b><br>若字符串开头是空格，则跳过所有空格，到第一个非空格字符，如果没有非空字符，则返回0.<br>若第一个非空格字符是符号+/-(可选的) ,则标记sign的真假<br>若符号位的下一个字符不是数字，则返回0. 完全不考虑小数点和自然数的情况，不过这样也好，起码省事了不少 ,但是也有个局限性，那就是在c++里面，+-1和-+1都是-1，而在此题里,<u>符号位</u>之后的字符如果不是数字 , 则都返回 0.<br>如果下一个字符是数字，则转为整形存下来，若接下来再有非数字出现，则返回目前的结果。<br>还需要考虑边界问题，如果超过了整形数的范围，则用边界值替代当前值。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>比如 : “     -00134aa.43”  这个字符串,<br>前面的所有空格都省略, 直到读到符号位 ,后面判断是否是数字, 读取数字, 一旦遇到不是数字的 ,跳出. </p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">myAtoi</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (str.empty()) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> sign = <span class="number">1</span>, base = <span class="number">0</span>, i = <span class="number">0</span>, n = str.size();</span><br><span class="line">    <span class="comment">// 先去掉前面所有的空格  直到找到一个非空格字符 </span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; n &amp;&amp; str[i] == <span class="string">' '</span>) ++i;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"现在的 i: "</span>&lt;&lt;i&lt;&lt;<span class="built_in">endl</span>; </span><br><span class="line"></span><br><span class="line">    <span class="comment">//接着判断符号 </span></span><br><span class="line">    <span class="keyword">if</span> (str[i] == <span class="string">'+'</span> || str[i] == <span class="string">'-'</span>) &#123;</span><br><span class="line">        sign = (str[i++] == <span class="string">'+'</span>) ? <span class="number">1</span> : <span class="number">-1</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//在进位之前 ,先要判断一下进位之后是否会越界 </span></span><br><span class="line">    <span class="comment">//exp1 和 exp2 表示两个判断语句的真假</span></span><br><span class="line">    <span class="keyword">while</span> (i &lt; n &amp;&amp; str[i] &gt;= <span class="string">'0'</span> &amp;&amp; str[i] &lt;= <span class="string">'9'</span>) &#123;</span><br><span class="line">        <span class="keyword">bool</span> exp1 =  base &gt; INT_MAX / <span class="number">10</span>; </span><br><span class="line">        <span class="keyword">bool</span> exp2 =  (base == INT_MAX / <span class="number">10</span> &amp;&amp; str[i] - <span class="string">'0'</span> &gt; <span class="number">7</span>); </span><br><span class="line">        <span class="keyword">if</span> ( exp1==<span class="literal">true</span> || exp2==<span class="literal">true</span> )&#123;</span><br><span class="line">            <span class="keyword">return</span> (sign == <span class="number">1</span>)? INT_MAX : INT_MIN;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//如果进位之后不越界, 那就大胆进位.</span></span><br><span class="line">        <span class="comment">//这里的str[i++] 是先执行base 操作, 再i++ ,</span></span><br><span class="line">        <span class="comment">//如果是str[++i] , 那就是先i自加, 再操作base...</span></span><br><span class="line">        base = <span class="number">10</span> * base + (str[i++] - <span class="string">'0'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> base*sign;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">string</span> a = <span class="string">"     001342222222222288888888aa.43"</span>;</span><br><span class="line">	<span class="built_in">string</span> b = <span class="string">"   -001342.aa3"</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"数字a是 :"</span>&lt;&lt;myAtoi(a);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"数字b是 :"</span>&lt;&lt;myAtoi(b);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//string::size()/string::length() 没有区别, length()是为了兼容 .</span></span><br></pre></td></tr></table></figure>
+<p>运行结果 :<br><img src="/images/artilce8-1.png"><br><br><br><br><br>——彩蛋——-:<br><a href="https://www.cnblogs.com/grandyang/p/4125537.html" target="_blank" rel="external">参考一</a><br><a href="http://blog.csdn.net/fightforyourdream/article/details/12900751" target="_blank" rel="external">拓展参考: 正则表达式判断是不是有效的数字表达式..</a> </p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>赏你~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/Alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
 
     </div>
@@ -205,16 +258,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/19/LeetCode-8/">Show it >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/19/LeetCode-8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/18/LeetCode-7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode(7) Reverse Integer</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -234,729 +346,16 @@
 
 
 
-
   
-    <article id="post-LeetCode-7" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/LeetCode-7/">LeetCode(7) Reverse Integer</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/18/LeetCode-7/" class="archive-article-date">
-  	<time datetime="2017-11-18T14:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <style>p {  margin: 8px;  font-size: 20px;  }</style>
-
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1925208&auto=0&height=66"></iframe><br>
-        
-          <a class="article-more-a" href="/2017/11/18/LeetCode-7/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/18/LeetCode-7/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-6" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/18/LeetCode-6/">LeetCode(6)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/18/LeetCode-6/" class="archive-article-date">
-  	<time datetime="2017-11-18T07:10:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <style>p {  margin: 8px;  font-size: 20px;  }</style>
-
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27901400&auto=0&height=66"></iframe><br>
-        
-          <a class="article-more-a" href="/2017/11/18/LeetCode-6/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/18/LeetCode-6/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-最长回文子序列" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/17/最长回文子序列/">最长回文子序列</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/17/最长回文子序列/" class="archive-article-date">
-  	<time datetime="2017-11-17T13:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <style>p {  margin: 8px;  font-size: 20px;  }</style>
-
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1296882&auto=0&height=66"></iframe><br>
-        
-          <a class="article-more-a" href="/2017/11/17/最长回文子序列/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/17/最长回文子序列/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/17/LeetCode-5/">LeetCode(5)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/17/LeetCode-5/" class="archive-article-date">
-  	<time datetime="2017-11-16T16:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <style>p {  margin: 8px;  font-size: 20px;  }</style>
-
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1296882&auto=0&height=66"></iframe><br>
-        
-          <a class="article-more-a" href="/2017/11/17/LeetCode-5/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/17/LeetCode-5/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/16/LeetCode-4/">LeetCode(4)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/16/LeetCode-4/" class="archive-article-date">
-  	<time datetime="2017-11-16T12:59:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=29386018&auto=0&height=66"></iframe>
-        
-          <a class="article-more-a" href="/2017/11/16/LeetCode-4/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/16/LeetCode-4/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/15/LeetCode-3/">LeetCode(3)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/15/LeetCode-3/" class="archive-article-date">
-  	<time datetime="2017-11-15T07:12:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=19934757&auto=0&height=66"></iframe><br>
-        
-          <a class="article-more-a" href="/2017/11/15/LeetCode-3/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/15/LeetCode-3/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-1-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/13/LeetCode-1-2/">LeetCode(1~2)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/13/LeetCode-1-2/" class="archive-article-date">
-  	<time datetime="2017-11-13T15:36:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=5397592&auto=0&height=66"></iframe><br>
-        
-          <a class="article-more-a" href="/2017/11/13/LeetCode-1-2/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/13/LeetCode-1-2/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-What-do-you-want" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/What-do-you-want/">What do you want?</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/12/What-do-you-want/" class="archive-article-date">
-  	<time datetime="2017-11-12T11:27:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>怎样找到自己真正想做的事？<br>
-        
-          <a class="article-more-a" href="/2017/11/12/What-do-you-want/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/12/What-do-you-want/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-来碗小冰! 实现聊天机器人(python3)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/">来碗小冰! 实现聊天机器人(python3)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/" class="archive-article-date">
-  	<time datetime="2017-11-12T11:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="实现基于Web接口的聊天机器人"><a href="#实现基于Web接口的聊天机器人" class="headerlink" title="实现基于Web接口的聊天机器人"></a>实现基于Web接口的聊天机器人</h3>
-        
-          <a class="article-more-a" href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">project</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -982,8 +381,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
