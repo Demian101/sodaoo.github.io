@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sodaoo</title>
+  <title>LeetCode(9) Palindrome Number | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sodaoo">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+  <meta name="keywords" content="LeetCode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode(9) Palindrome Number">
+<meta property="og:url" content="http://yoursite.com/2017/11/19/LeetCode-9/index.html">
 <meta property="og:site_name" content="Sodaoo">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://yoursite.com/images/article9-1.png">
+<meta property="og:image" content="http://yoursite.com/images/article9-2.png">
+<meta property="og:updated_time" content="2017-11-19T08:03:30.719Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sodaoo">
+<meta name="twitter:title" content="LeetCode(9) Palindrome Number">
+<meta name="twitter:image" content="http://yoursite.com/images/article9-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
   
@@ -155,34 +160,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-来碗小冰! 实现聊天机器人(python3)" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-LeetCode-9" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/">来碗小冰! 实现聊天机器人(python3)</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode(9) Palindrome Number
     </h1>
   
 
         
-        <a href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/" class="archive-article-date">
-  	<time datetime="2017-11-12T11:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-12</time>
+        <a href="/2017/11/19/LeetCode-9/" class="archive-article-date">
+  	<time datetime="2017-11-19T05:59:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="实现基于Web接口的聊天机器人"><a href="#实现基于Web接口的聊天机器人" class="headerlink" title="实现基于Web接口的聊天机器人"></a>实现基于Web接口的聊天机器人</h3>
-        
-          <a class="article-more-a" href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/#more">more >></a>
-        
+        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=527573&auto=0&height=66"></iframe><br><a id="more"></a></p>
+<style>p {  margin: 8px;  font-size: 20px;  }</style>
+
+<p><b>Description : </b></p>
+<blockquote>
+<p>Determine whether an integer is a palindrome .<br>Do this without extra space. (WithOUT extra Space !)<br>不用额外的空间判断一个数字是否是回文串.</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="comment">//我们不能将 x 转为字符串,然后反转, 来判断 .    </span></span><br><span class="line">	<span class="comment">//那我们就不翻转成 字符串...我们将数字串翻转 .</span></span><br><span class="line">    <span class="keyword">if</span> (x&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span> ; <span class="keyword">int</span> backup = x; <span class="comment">//x的备份</span></span><br><span class="line">    <span class="keyword">while</span>(backup)&#123; </span><br><span class="line">        sum = sum*<span class="number">10</span> + backup%<span class="number">10</span> ; </span><br><span class="line">        backup = (backup - backup%<span class="number">10</span>)/<span class="number">10</span>;  </span><br><span class="line">	  <span class="comment">// cout..backup..sum.. </span></span><br><span class="line">    &#125; </span><br><span class="line">    <span class="comment">// sum 存储了翻转过后的数字 .</span></span><br><span class="line">    <span class="keyword">if</span>( x == sum) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">167111172</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"0 代表不是回文, 1 代表是回文"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"num a :"</span>&lt;&lt;isPalindrome(a)&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"num b :"</span>&lt;&lt;isPalindrome(b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;        <span class="comment">//(time: 165ms ,beat 60%)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>##代码仍然有可以改进的地方 ,以 167111761 为例 ,我们在程序中追踪 sum 和 backup 的变化:</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...     sum = sum*<span class="number">10</span> + backup%<span class="number">10</span> ; </span><br><span class="line">        backup = (backup - backup%<span class="number">10</span>)/<span class="number">10</span>; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">"backup : "</span>&lt;&lt;backup; </span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;<span class="string">" , sum : "</span>&lt;&lt;sum&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>运行结果 :<br><img src="/images/article9-1.png"></p>
+<hr>
+<p>—- 看上图 ,backup 是被从尾部不断砍削的原字符串 ,sum 是不断成长的翻转字符串 , 也就是说 ,其实我们可以在运行到一半的时候就进行判断 : </p>
+<hr>
+<p><b>改进代码 :</b><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>|| (x!=<span class="number">0</span> &amp;&amp; x%<span class="number">10</span>==<span class="number">0</span>)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>( x &gt; sum) &#123;</span><br><span class="line">        sum = sum*<span class="number">10</span> + x%<span class="number">10</span>;</span><br><span class="line">        x = x/<span class="number">10</span>;</span><br><span class="line"><span class="comment">//      cout&lt;&lt;"x: "&lt;&lt;x&lt;&lt;"sum: "&lt;&lt;sum&lt;&lt;endl;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (x==sum)||(x==sum/<span class="number">10</span>);</span><br><span class="line">&#125;      <span class="comment">//(time : 142ms , beat 80.2%)</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/article9-2.png"><br><br><br>嘿嘿嘿 . 那我们如果想要打败 99% 的人怎么办呢,<br><figure class="highlight cpp"><figcaption><span>在类的定义前面加上这么一句就好了. ..可以加快 cin ,cout 的速度.</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> x=[]()&#123;</span><br><span class="line">    <span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br></pre></td></tr></table></figure></p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>赏你~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/Alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
 
     </div>
@@ -194,11 +236,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">project</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
         		</li>
       		
 		</ul>
@@ -207,16 +245,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/12/来碗小冰! 实现聊天机器人(python3)/">Show it >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/19/LeetCode-9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/11/19/LeetCode-8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode(8) String to Integer</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -236,89 +333,16 @@
 
 
 
-
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/10/hello-world/">Test Article</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/10/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-10T11:06:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This is a test article </p>
-        
-          <a class="article-more-a" href="/2017/11/10/hello-world/#more">more >></a>
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/10/hello-world/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
 
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -344,8 +368,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

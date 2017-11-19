@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Sodaoo">
 <meta property="og:description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-18T15:07:10.057Z">
+<meta property="og:updated_time" content="2017-11-19T07:58:33.246Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode(7) Reverse Integer">
 <meta name="twitter:description" content="p {  margin: 8px;  font-size: 20px;  }">
@@ -190,7 +190,7 @@
 <p><b><u>Integer OverFLOWS   !!!!!!!!!!!!!!!!</u></b><br>#### 程序要求输入一个数字, 将其翻转. 正负号不变 .我们要考虑到 : 如果输入 2147483647 , 那么翻转后是 7463847412 , 显然溢出了, 题目里要求对这样的溢出要返回零 .那就返回 0 呗 .<br>#### 考虑到溢出问题 , 我们故意用 long 数据来存储 翻转后的字符串.但是第一次提交 WA…. 仔细一看 INT_MAX 和 LONG_MAX , 他们竟然是一样的!!!  所以我们吸取教训, 用 long long 临时存储翻转后的数据 .就可以 AC 了</p>
 <p>#### 打印一下 64位机的各种情况 :<br>cout&lt;&lt;INT_MAX: 2147483647 ;<br>cout&lt;&lt;INT_MIN: -2147483648 ;<br>cout&lt;&lt;LONG_MAX: 2147483647 ;<br>cout&lt;&lt;LONG_LONG_MAX: 9223372036854775807 ;</p>
 <p>至于正负号问题 ,是不用特殊处理的 .</p>
-<p><b>代码:</b><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">while</span>(x)&#123;</span><br><span class="line">        res = res*<span class="number">10</span>+x%<span class="number">10</span>;</span><br><span class="line">        x = x/<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res &gt; INT_MAX || res &lt; INT_MIN) ? <span class="number">0</span> : res;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p><b>代码:</b><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> x=[]()&#123;</span><br><span class="line">    <span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">reverse</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> res = <span class="number">0</span>; </span><br><span class="line">    <span class="keyword">while</span>(x)&#123;</span><br><span class="line">        res = res*<span class="number">10</span>+x%<span class="number">10</span>;</span><br><span class="line">        x = x/<span class="number">10</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (res &gt; INT_MAX || res &lt; INT_MIN) ? <span class="number">0</span> : res;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
       
 
@@ -439,11 +439,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
