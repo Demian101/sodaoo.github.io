@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode(10) Regular Expression Matching | Sodaoo</title>
+  <title>LeetCode(14) Longest Common Prefix | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="LeetCode">
+  <meta name="description" content="p {  margin: 8px;  font-size: 20px;  }">
+<meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode(10) Regular Expression Matching">
-<meta property="og:url" content="http://yoursite.com/2017/11/19/LeetCode-10/index.html">
+<meta property="og:title" content="LeetCode(14) Longest Common Prefix">
+<meta property="og:url" content="http://yoursite.com/2017/11/21/LeetCode-14/index.html">
 <meta property="og:site_name" content="Sodaoo">
+<meta property="og:description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/article10-1.png">
-<meta property="og:updated_time" content="2017-11-20T06:38:07.120Z">
+<meta property="og:updated_time" content="2017-11-20T13:16:58.478Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode(10) Regular Expression Matching">
-<meta name="twitter:image" content="http://yoursite.com/images/article10-1.png">
+<meta name="twitter:title" content="LeetCode(14) Longest Common Prefix">
+<meta name="twitter:description" content="p {  margin: 8px;  font-size: 20px;  }">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
   
@@ -159,45 +160,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode-10" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode-14" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode(10) Regular Expression Matching
+      LeetCode(14) Longest Common Prefix
     </h1>
   
 
         
-        <a href="/2017/11/19/LeetCode-10/" class="archive-article-date">
-  	<time datetime="2017-11-19T08:16:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-19</time>
+        <a href="/2017/11/21/LeetCode-14/" class="archive-article-date">
+  	<time datetime="2017-11-21T11:39:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=527573&auto=0&height=66"></iframe><br><a id="more"></a></p>
-<style>p {  margin: 8px;  font-size: 20px;  }</style>
-
-<p><b>Description : </b> [hard]</p>
-<blockquote>
-<p>‘ . ‘Matches any single character. (任意字符)<br>‘ * ‘ Matches zero or more of the preceding element. (匹配 0个 或 多个前面出现的字符)<br>The matching should cover the entire input string (not partial).<br>Some examples:<img src="/images/article10-1.png"></p>
-</blockquote>
-<hr>
-<p>这个题代码我没大看懂啊???? 先挂着吧 .</p>
-<hr>
-<p style="font-size: 24px">方法一 : 暴力破解</p>
-
-<p>## 基本思路:<br>   就是先看字符串 s (string主串) 和 p (pattern 模式串)的从 i 和 j 开始的子串是否匹配，用递归的方法直到串的最后，最后回溯回来得到结果。</p>
-<p>   假设现在走到 s 的 i 位置 ,p的 j 位置，情况分为下列两种：<br>   —-(1): p[j+1]不是 ‘ * ‘ ,情况比较简单，只要判断当前s[i]和p[j]是否一样(或者p[j] == ‘.’） ,如果不同，返回 false，否则，递归下一层i+1，j+1;<br>   —-(2): p[j+1]是 ‘ * ‘ .那么此时看从s[i]开始的子串，假设 s[i],s[i+1],…s[i+k] 都等于 p[j] 那么意味着这些都是合适的匹配 , 那么递归对于剩下的(i,j+2),(i+1,j+2),…,(i+k,j+2) 都要尝试 (j+2是跳过 ‘ * ‘字符)。 </p>
-<p>   模式串 pattern 是个图框, s 串是个拼图, 拼图很小 ,但是只要能完美的嵌入图框, 那就是匹配的. 图框不和拼图匹配的多余空间 就是冗余的 .同理 ,拼图比图框还大 ,那也不能匹配 .</p>
-<p>   比如:  s串: “aaaab”  &amp;  p串: “c*a*b” 是可以匹配的 . “aaaab” 是拼图 , “c*a*b” 是图框 .初始 i=0,j=0的时候,我们就发现 p[j+1]是 “*“ ,此时判断s[i]和p[j] :  s[i]是’a’ 不等于 ‘c’ . 那么模式串的 “c*“ 不能匹配主串的开头第一个字母 . “c*“ 就是冗余的,可以抛弃的 ,模式串就可以变成”a*b” .此时 j==0 , 指针后移 2 位(j+=2)指向 “c*a*b” 中的 ‘a’ ,重新执行刚才的过程 :判断 s[0] 和 p[2] , 此时恰好 s[i]==p[j] ……. </p>
-<p>实现代码如下：<br><figure class="highlight java"><figcaption><span>Java</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMatch</span><span class="params">(String s, String p)</span> </span>&#123;  </span><br><span class="line">    <span class="keyword">return</span> helper(s,p,<span class="number">0</span>,<span class="number">0</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">helper</span><span class="params">(String s, String p, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span>  </span>&#123;  </span><br><span class="line">    <span class="comment">//当0 == p.size():</span></span><br><span class="line">    <span class="comment">// 如果 s串长度也为零, 那么表达式 i==s.size()为真, 返回匹配成功. </span></span><br><span class="line">    <span class="comment">// 如果 s串长度不为零, 那么表达式 i==s.size()为真, 返回匹配失败. </span></span><br><span class="line">    <span class="keyword">if</span>(j==p.length())  </span><br><span class="line">        <span class="keyword">return</span> i==s.length();  </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果 j 指到了模式串的最后一位 ,或者 j 没有指到最后一位 但是</span></span><br><span class="line">    <span class="comment">// p.at(j+1) 不是 '*' 的话 : </span></span><br><span class="line">    <span class="keyword">if</span>(j==p.length()-<span class="number">1</span> || p.charAt(j+<span class="number">1</span>)!=<span class="string">'*'</span>)&#123;  </span><br><span class="line">        <span class="comment">// i 匹配到头了 ,或是这一波不能匹配 . </span></span><br><span class="line">        <span class="keyword">if</span>(i==s.length()|| s.charAt(i)!=p.charAt(j) &amp;&amp; p.charAt(j)!=<span class="string">'.'</span>)  </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;  </span><br><span class="line">      </span><br><span class="line">        <span class="comment">//执行到 else 说明 ,i&lt;s.size()而且s.at[i]==p.at[j]或是 p.at(j)=='.' ; </span></span><br><span class="line">        <span class="keyword">else</span>  </span><br><span class="line">            <span class="keyword">return</span> helper(s,p,i+<span class="number">1</span>,j+<span class="number">1</span>);  </span><br><span class="line">    &#125;  </span><br><span class="line"></span><br><span class="line">    <span class="comment">//经过前面的一番判断 : p.at[j+1] !='*' 的时候,   </span></span><br><span class="line">    <span class="comment">//有两个选择, 一个是匹配(s[i]==p[j]或p[j]=='.') -&gt; helper(s,p,i+1,j+1)</span></span><br><span class="line">    <span class="comment">//第二是失配 , 直接 return false . 既然执行到这个语句, 说明p[j]!='*'不成立 , </span></span><br><span class="line">    <span class="comment">//也就是可怕的 : p.at(j+1) == '*'  !!!!!! </span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;s.length() &amp;&amp; (p.charAt(j)==<span class="string">'.'</span> || s.charAt(i)==p.charAt(j)))&#123;  </span><br><span class="line">        <span class="keyword">if</span>(helper(s,p,i,j+<span class="number">2</span>))  </span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;  </span><br><span class="line">        i++;  </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> helper(s,p,i,j+<span class="number">2</span>);  </span><br><span class="line">&#125;  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    cout&lt;&lt;isMatch(<span class="string">"aaa"</span>,<span class="string">"a.*"</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight cpp"><figcaption><span>一个没看懂的AC的 ,简洁的 dp.....</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> x=[]()&#123;</span><br><span class="line">    <span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">isMatch</span><span class="params">(<span class="built_in">string</span> s, <span class="built_in">string</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = s.length(), n = p.length(); </span><br><span class="line"></span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; &gt; dp(m + <span class="number">1</span>, <span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt; (n + <span class="number">1</span>, <span class="literal">false</span>));</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt;= m; i++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++)&#123;</span><br><span class="line">            <span class="comment">// "*" 前面必然有其他的字符 , * 不会独自出现 .</span></span><br><span class="line">            <span class="keyword">if</span> (p[j - <span class="number">1</span>] == <span class="string">'*'</span>)&#123; </span><br><span class="line">                dp[i][j] = dp[i][j - <span class="number">2</span>] || (i &gt; <span class="number">0</span> &amp;&amp; (s[i - <span class="number">1</span>] == p[j - <span class="number">2</span>] || p[j - <span class="number">2</span>] == <span class="string">'.'</span>) &amp;&amp; dp[i - <span class="number">1</span>][j]);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123; </span><br><span class="line">                dp[i][j] = i &gt; <span class="number">0</span> &amp;&amp; dp[i - <span class="number">1</span>][j - <span class="number">1</span>] &amp;&amp; (s[i - <span class="number">1</span>] == p[j - <span class="number">1</span>] || p[j - <span class="number">1</span>] == <span class="string">'.'</span>);</span><br><span class="line">            &#125; </span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[m][n];</span><br><span class="line">&#125;      <span class="comment">// (time :6ms ,beat 83%)</span></span><br></pre></td></tr></table></figure>
-<p><a href="http://blog.csdn.net/linhuanmars/article/details/21145563" target="_blank" rel="external">思路提供</a></p>
+        <p><style>p {  margin: 8px;  font-size: 20px;  }</style><br><a id="more"></a></p>
+<p><b>Description : </b><br>&gt;</p>
 
       
 
@@ -294,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/19/LeetCode-10/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/21/LeetCode-14/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -308,18 +292,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/20/LeetCode-11/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode(11) Container With Most Water
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/19/LeetCode-9/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LeetCode(9) Palindrome Number</div>
+    <a href="/2017/11/21/LeetCode-12!13/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode(12~13) Roman&lt;=&gt;Integer</div>
       <i class="icon-circle-right"></i>
     </a>
   
