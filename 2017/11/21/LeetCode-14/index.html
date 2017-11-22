@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Sodaoo">
 <meta property="og:description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-11-20T13:16:58.478Z">
+<meta property="og:updated_time" content="2017-11-22T06:04:45.073Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode(14) Longest Common Prefix">
 <meta name="twitter:description" content="p {  margin: 8px;  font-size: 20px;  }">
@@ -181,8 +181,13 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><style>p {  margin: 8px;  font-size: 20px;  }</style><br><a id="more"></a></p>
-<p><b>Description : </b><br>&gt;</p>
-
+<p><b>Description : </b></p>
+<blockquote>
+<p>Write a function to find the longest common prefix string amongst an array of strings.<br>for example:<br>“abcjkf” , “abcowi” ,”abcR” ,the longest common prefix string is “abc”<br>if NO common prefix , just return “” .<br>翻译 : 寻找最长<b>前缀</b><br>比如 :strs = [‘abc’,’abccc’,’abcccdbccccc’]<br>那么 strs 的最长前缀就是 “abc”</p>
+</blockquote>
+<p>容易想到的思路就是:<br>只需要寻找最短的字符串里的前缀 是否是其他所有字符串的前缀 .<br>举例 : strs = [‘abc’,’abccc’,’abcccdbccccc’] ,拿 abc 作参考,  依次判断 ‘a’ ,’b’ ,’c’ 是不是其他字符串的前缀 ,如果是 , 那就向后找, 如果不是 , 返回当前下标 index , 说明 当前字符不能匹配所有的字符串.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># AC 的 Python 代码 :</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">longestCommonPrefix</span><span class="params">(self, strs)</span>:</span></span><br><span class="line">        <span class="comment"># 首先 ,sort排序默认按照字母排序, 更改排序策略, 按字符串长度排序</span></span><br><span class="line">        <span class="comment"># 或者写成 : strs.sort(key=len)</span></span><br><span class="line">        strs.sort(key=<span class="keyword">lambda</span> x:len(x))</span><br><span class="line">        shortest = strs[<span class="number">0</span>]  <span class="comment"># strs[0] 就是最短的字符串 .</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 调用 find 函数 </span></span><br><span class="line">        index = self.find(shortest,strs)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> shortest[<span class="number">0</span>:index]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">find</span><span class="params">(self,shortest,strs)</span>:</span></span><br><span class="line">        <span class="comment"># 对最短字符串的每个字符的 index ,word 进行遍历</span></span><br><span class="line">        <span class="keyword">for</span> index ,word <span class="keyword">in</span> enumerate(shortest):</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(len(strs)):</span><br><span class="line">                <span class="keyword">if</span> word != strs[i][index]:</span><br><span class="line">                    <span class="keyword">return</span> index  <span class="comment"># 不匹配了 ,终止了 .</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># (time: 72ms ,beat 30%)</span></span><br></pre></td></tr></table></figure></p>
+<p>优化策略 : 缺点就是 如果最短的字符串仍然很长的话 ,会比较很多次<br>.但是好像也没有更好的解决策略了 .<br>python 还是慢 ,看看人家的 C++ :</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> x=[]() &#123;</span><br><span class="line">   <span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">   <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="built_in">string</span> <span class="title">longestCommonPrefix</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">string</span>&gt;&amp; strs)</span> </span>&#123;</span><br><span class="line">      <span class="built_in">string</span> prefix = <span class="string">""</span>;</span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> idx=<span class="number">0</span>; strs.size()&gt;<span class="number">0</span>; prefix+=strs[<span class="number">0</span>][idx], idx++)</span><br><span class="line">         <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;strs.size(); i++)</span><br><span class="line">           <span class="keyword">if</span>(idx &gt;= strs[i].size() ||(i &gt; <span class="number">0</span> &amp;&amp; strs[i][idx] != strs[i<span class="number">-1</span>][idx]))</span><br><span class="line">             <span class="keyword">return</span> prefix;</span><br><span class="line">          <span class="keyword">return</span> prefix;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// (time: 3 ms ,beat 99.8% )</span></span><br></pre></td></tr></table></figure>
       
 
       
@@ -421,11 +426,11 @@ getOwnMetadataKeys:function(t){return o(i(t),arguments.length<2?void 0:u(argumen
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">python</a>
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
              
               <li class="article-tag-list-item">
