@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>LeetCode(6) | Sodaoo</title>
+  <title>LeetCode(16) 3Sum Closest | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta name="keywords" content="LeetCode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode(6)">
-<meta property="og:url" content="http://yoursite.com/2017/11/18/LeetCode-6/index.html">
+<meta property="og:title" content="LeetCode(16) 3Sum Closest">
+<meta property="og:url" content="http://yoursite.com/2017/11/23/LeetCode-16/index.html">
 <meta property="og:site_name" content="Sodaoo">
 <meta property="og:description" content="p {  margin: 8px;  font-size: 20px;  }">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/images/article6-1.png">
-<meta property="og:image" content="http://yoursite.com/images/article6-2.png">
-<meta property="og:updated_time" content="2017-11-18T14:30:06.611Z">
+<meta property="og:updated_time" content="2017-11-23T03:33:09.415Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode(6)">
+<meta name="twitter:title" content="LeetCode(16) 3Sum Closest">
 <meta name="twitter:description" content="p {  margin: 8px;  font-size: 20px;  }">
-<meta name="twitter:image" content="http://yoursite.com/images/article6-1.png">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
   
@@ -163,38 +160,41 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-LeetCode-6" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-LeetCode-16" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode(6)
+      LeetCode(16) 3Sum Closest
     </h1>
   
 
         
-        <a href="/2017/11/18/LeetCode-6/" class="archive-article-date">
-  	<time datetime="2017-11-18T07:10:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-18</time>
+        <a href="/2017/11/23/LeetCode-16/" class="archive-article-date">
+  	<time datetime="2017-11-23T02:10:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <style>p {  margin: 8px;  font-size: 20px;  }</style>
-
-<p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=27901400&auto=0&height=66"></iframe><br><a id="more"></a></p>
+        <p><style>p {  margin: 8px;  font-size: 20px;  }</style><br><a id="more"></a></p>
 <p><b>Description : </b></p>
 <blockquote>
-<p>The string “PAYPALISHIRING” is written in a zigzag pattern on a given number of rows like this:<img src="/images/article6-1.png" alt="题目描述"><br>“PAYPALISHIRING” 这个单词被用(之字形)写成了如上图所示 .  我们要实现一个函数 convert(string s, int nRows) 将字符串 s 变成像上图那样的 nRows 行(之字形) , 然后按行把它读出来 . 如上图 按行读出来就是 : PAHN-APLSIIG-YIR</p>
+<p>Given an array S of n integers, find three integers in S such that the sum is closest to a given number: target.<br>Return the sum of the three integers. You may assume that each input would have exactly one solution.</p>
+<p>For example, given array S = { -1 2 1 -4 },  target = 1.</p>
+<p>The sum that closest to the target is 2.  ( cause: -1 + 2 + 1 = 2).</p>
+<hr>
+<p>寻找 array 里面三数之和距离 target 最近的数 .返回这三数之和 .</p>
 </blockquote>
-<p>尴尬 , 这个题没做出来, 看别人的思路还是很有帮助的….<a href="https://leetcode.com/problems/zigzag-conversion/discuss/" target="_blank" rel="external">原链接</a>  .</p>
-<p>#:知识点 :<br>1.string 的 str.push_back(ch)方法 : 将ch 加入 str 尾部 .<br>2.string 的 str.append(str2)方法 : 将str2 字符串整个填入尾部 .</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">convert</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> nRows)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nRows &lt;= <span class="number">1</span>)  <span class="keyword">return</span> s;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> <span class="keyword">int</span> len = (<span class="keyword">int</span>)s.length();</span><br><span class="line">    <span class="comment">//创建了一个二维数组,str[row] 保存了每一行的字符串 .</span></span><br><span class="line">    <span class="built_in">string</span> *str = <span class="keyword">new</span> <span class="built_in">string</span>[nRows];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> row = <span class="number">0</span>, step = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; ++i)&#123;</span><br><span class="line">        str[row].push_back(s[i]);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (row == <span class="number">0</span>)</span><br><span class="line">            step = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (row == nRows - <span class="number">1</span>)</span><br><span class="line">            step = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">        row = row + step;</span><br><span class="line">    &#125;</span><br><span class="line">    s.clear();  <span class="comment">// s 串置为空, 重新赋值 .</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; nRows; ++j)&#123;</span><br><span class="line">        s.append(str[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">delete</span>[] str;  <span class="comment">//删除占用的空间 ,好习惯.</span></span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>运行结果 :<br><img src="/images/article6-2.png" alt="运行结果"></p>
-<p>思路可以说是很清晰了…………..</p>
+<p><br><br>一开始以为和前面的三数之和有关, 但是很不幸…这是另一个题了 ..</p>
+<p>方法就是不断的维护三个数的较小值, 直到遍历结束 .</p>
+<p>如何确保不用三重循环? 只需要对 array 排序, 然后用三个指针 ,两个指在最前, 一个指在最后 .</p>
+<figure class="highlight python"><figcaption><span>Python 代码 :</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span>  <span class="title">threeSumClosest</span><span class="params">(self,nums,target)</span>:</span></span><br><span class="line">   nums.sort()</span><br><span class="line"></span><br><span class="line">   res = nums[<span class="number">0</span>]+nums[<span class="number">1</span>]+nums[<span class="number">2</span>]  <span class="comment"># result</span></span><br><span class="line"></span><br><span class="line">   <span class="comment"># 两个循环 ,维护相对较小的 res </span></span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> range(len(nums) - <span class="number">2</span>):</span><br><span class="line">      j , k = i+<span class="number">1</span> ,len(nums)<span class="number">-1</span></span><br><span class="line">      <span class="keyword">while</span> j&lt;k:</span><br><span class="line">         sum = nums[i]+nums[j]+nums[k]</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span> sum == target:</span><br><span class="line">            <span class="keyword">return</span> sum</span><br><span class="line">         <span class="keyword">if</span> abs(sum - target) &lt; abs(res - target):</span><br><span class="line">            res = sum</span><br><span class="line"></span><br><span class="line">         <span class="keyword">if</span> sum &lt; target :</span><br><span class="line">            j = j + <span class="number">1</span></span><br><span class="line">         <span class="keyword">elif</span> sum &gt; target:</span><br><span class="line">            k = k - <span class="number">1</span></span><br><span class="line">   <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>C++代码 :</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="keyword">int</span> x=[]() &#123;</span><br><span class="line">   <span class="built_in">std</span>::ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">   <span class="built_in">cin</span>.tie(<span class="literal">NULL</span>);</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;();</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">   <span class="function"><span class="keyword">int</span> <span class="title">threeSumClosest</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">int</span> res = nums[<span class="number">0</span>] + nums[<span class="number">1</span>] + nums[<span class="number">2</span>];</span><br><span class="line">      <span class="keyword">int</span> diff = <span class="built_in">abs</span>(res - target);</span><br><span class="line">      sort(nums.begin(), nums.end());</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size() - <span class="number">2</span>; ++i) &#123;</span><br><span class="line">         <span class="keyword">int</span> left = i + <span class="number">1</span>, right = nums.size() - <span class="number">1</span>;</span><br><span class="line">         <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            <span class="keyword">int</span> sum = nums[i] + nums[left] + nums[right];</span><br><span class="line">            <span class="keyword">int</span> newDiff = <span class="built_in">abs</span>(sum - target);</span><br><span class="line">            <span class="keyword">if</span> (diff &gt; newDiff) &#123;</span><br><span class="line">               diff = newDiff;</span><br><span class="line">               res = sum;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (sum &lt; target) ++left;</span><br><span class="line">            <span class="keyword">else</span> --right;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> res;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><a href="https://www.cnblogs.com/grandyang/p/4510984.html" target="_blank" rel="external">  Thanks for 思路来源</a></p>
 
       
 
@@ -291,7 +291,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/18/LeetCode-6/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/11/23/LeetCode-16/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -305,18 +305,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/11/18/LeetCode-7/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          LeetCode(7) Reverse Integer
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/17/最长回文子序列/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">最长回文子序列</div>
+    <a href="/2017/11/22/LeetCode-15/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode(15) 3Sum</div>
       <i class="icon-circle-right"></i>
     </a>
   
