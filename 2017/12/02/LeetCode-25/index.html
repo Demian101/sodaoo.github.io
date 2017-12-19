@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Sodaoo</title>
+  <title>LeetCode(25) Reverse Nodes in k-Group | Sodaoo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Sodaoo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="p {  margin: 8px;  font-size: 19px;  }">
+<meta name="keywords" content="LeetCode,链表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode(25) Reverse Nodes in k-Group">
+<meta property="og:url" content="http://yoursite.com/2017/12/02/LeetCode-25/index.html">
 <meta property="og:site_name" content="Sodaoo">
+<meta property="og:description" content="p {  margin: 8px;  font-size: 19px;  }">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-19T01:24:25.924Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Sodaoo">
+<meta name="twitter:title" content="LeetCode(25) Reverse Nodes in k-Group">
+<meta name="twitter:description" content="p {  margin: 8px;  font-size: 19px;  }">
   
     <link rel="alternative" href="/atom.xml" title="Sodaoo" type="application/atom+xml">
   
@@ -155,93 +160,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-LeetCode-26-27" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-LeetCode-25" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/10/LeetCode-26-27/">LeetCode(26~27)</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/10/LeetCode-26-27/" class="archive-article-date">
-  	<time datetime="2017-12-10T09:13:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/12/10/LeetCode-26-27/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/10/LeetCode-26-27/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-25" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/02/LeetCode-25/">LeetCode(25) Reverse Nodes in k-Group</a>
+    <h1 class="article-title" itemprop="name">
+      LeetCode(25) Reverse Nodes in k-Group
     </h1>
   
 
@@ -254,12 +180,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/12/02/LeetCode-25/#more">more >></a>  -->
-        
+        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br><a id="more"></a>  &nbsp; <!-- div.. --><br><b>Description : </b></p>
+<blockquote>
+<p>Reverse the nodes of a linked list k at a time and return its modified list.<br>k is a positive integer and is less than or equal to the length of the linked list.<br>If the number of nodes is not a multiple of k then left-out nodes in the end should remain as it is.<br>You may not alter the values in the nodes, only nodes itself may be changed.<br>Only constant memory is allowed. (只允许常数内存)</p>
+<p>和前面的 swap Nodes in Pairs 一样 , 那个是翻转相邻的两个数,<br>这次是翻转相邻的 k 个数 .<br>For example,<br>Given this linked list: 1-&gt;2-&gt;3-&gt;4-&gt;5<br>For k = 2, you should return: 2-&gt;1-&gt;4-&gt;3-&gt;5<br>For k = 3, you should return: 3-&gt;2-&gt;1-&gt;4-&gt;5<br>For k = 4, you should return: 4-&gt;3-&gt;2-&gt;1-&gt;5</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">reverseKGroup</span><span class="params">(self, head, k)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> head == <span class="keyword">None</span> <span class="keyword">or</span> head.next ==<span class="keyword">None</span>:</span><br><span class="line">            <span class="keyword">return</span> head</span><br><span class="line">        allnodes = list()    //所有节点</span><br><span class="line">        headnode = ListNode(<span class="number">0</span>)</span><br><span class="line">        headnode.next = head</span><br><span class="line">        p = headnode.next</span><br><span class="line">        <span class="keyword">while</span> p:</span><br><span class="line">            allnodes.append(p)</span><br><span class="line">            p = p.next</span><br><span class="line">          </span><br><span class="line">        n=<span class="number">0</span> ; linklist = list()</span><br><span class="line">        <span class="keyword">while</span> n&lt;len(allnodes):</span><br><span class="line">            linklist.append(allnodes[n:n+k]) <span class="comment"># 自动处理越界</span></span><br><span class="line">            n = n+k</span><br><span class="line">        <span class="keyword">for</span> link <span class="keyword">in</span> linklist:</span><br><span class="line">            <span class="keyword">if</span> len(link) == k:</span><br><span class="line">                link.reverse()</span><br><span class="line"></span><br><span class="line">        p = headnode</span><br><span class="line">        <span class="keyword">for</span> link <span class="keyword">in</span> linklist:</span><br><span class="line">            <span class="keyword">for</span> nodes <span class="keyword">in</span> link:</span><br><span class="line">                p.next = nodes</span><br><span class="line">                p = nodes</span><br><span class="line">        p.next= <span class="keyword">None</span></span><br><span class="line">        <span class="keyword">return</span> headnode.next</span><br></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>赏你~<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/Alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
 
     </div>
@@ -284,16 +238,84 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/02/LeetCode-25/">Show it >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/12/02/LeetCode-25/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/12/10/LeetCode-26-27/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          LeetCode(26~27)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/12/01/LeetCode-24-Swap-Nodes-in-Pairs/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LeetCode(24) Swap Nodes in Pairs</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -313,656 +335,16 @@
 
 
 
-
   
-    <article id="post-LeetCode-24-Swap-Nodes-in-Pairs" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/01/LeetCode-24-Swap-Nodes-in-Pairs/">LeetCode(24) Swap Nodes in Pairs</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/01/LeetCode-24-Swap-Nodes-in-Pairs/" class="archive-article-date">
-  	<time datetime="2017-12-01T14:28:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/12/01/LeetCode-24-Swap-Nodes-in-Pairs/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/01/LeetCode-24-Swap-Nodes-in-Pairs/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-23" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/30/LeetCode-23/">LeetCode(23) Merge k Sorted Lists</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/30/LeetCode-23/" class="archive-article-date">
-  	<time datetime="2017-11-30T07:56:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/11/30/LeetCode-23/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">分治法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/30/LeetCode-23/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-22" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/29/LeetCode-22/">LeetCode(22) Generate Parentheses</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/29/LeetCode-22/" class="archive-article-date">
-  	<time datetime="2017-11-29T09:50:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/11/29/LeetCode-22/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/29/LeetCode-22/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-21" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/28/LeetCode-21/">LeetCode(21) Merge Two Sorted Lists</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/28/LeetCode-21/" class="archive-article-date">
-  	<time datetime="2017-11-28T09:27:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/11/28/LeetCode-21/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/28/LeetCode-21/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-20" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/27/LeetCode-20/">LeetCode(20) Valid Parentheses</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/27/LeetCode-20/" class="archive-article-date">
-  	<time datetime="2017-11-26T16:51:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/11/27/LeetCode-20/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/27/LeetCode-20/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-19" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/26/LeetCode-19/">LeetCode(19) Remove Nth Node From End of List</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/26/LeetCode-19/" class="archive-article-date">
-  	<time datetime="2017-11-26T12:56:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 18px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/11/26/LeetCode-19/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/26/LeetCode-19/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-18" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/25/LeetCode-18/">LeetCode(18) 4sum</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/25/LeetCode-18/" class="archive-article-date">
-  	<time datetime="2017-11-25T03:39:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 19px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/11/25/LeetCode-18/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/25/LeetCode-18/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-LeetCode-17" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/24/LeetCode-17/">LeetCode(17) Letter Combinations of a Phone Number</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/24/LeetCode-17/" class="archive-article-date">
-  	<time datetime="2017-11-23T16:07:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><style>p {  margin: 8px;  font-size: 18px;  }</style><br>
-        
-<!--          <a class="article-more-a" href="/2017/11/24/LeetCode-17/#more">more >></a>  -->
-        
-      
-
-      
-
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">LeetCode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/24/LeetCode-17/">Show it >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
 
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -988,8 +370,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
